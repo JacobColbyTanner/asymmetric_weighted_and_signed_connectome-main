@@ -1,0 +1,39 @@
+function [edge_usage] = get_edge_usage(sc)
+
+has_neg = sum(sc<0,"all") > 0;
+directed = sum(sc-sc',"all") > 0;
+
+if has_neg == 0
+    L = sparse(1./sc);
+elseif has_neg == 1
+    sf = 0.0001;
+    epsilon = range(nonzeros(B))*sf;
+    L = B;
+    L(SC ~= 0) = L(SC ~= 0) - min(B(:));% + epsilon;
+    L(SC ~= 0) = L(SC ~= 0) + epsilon;
+    L = 1./L;
+end
+
+
+n = length(L);
+edge_usage = zeros(n);
+for source = 1:n
+    [pth_all] = shortestpathtree(sparse(L),source);
+    
+
+    for target = 1:n
+        
+        if source ~= target
+            pth = pth_all{target};
+            w = zeros(length(pth) - 1,1);
+            for j = 1:length(pth) - 1
+                w(j) = B(pth(j),pth(j + 1));
+                edge_usage(pth(j),pth(j + 1)) = edge_usage(pth(j),pth(j + 1)) + 1;
+            end
+
+        end
+    end
+end
+
+
+
