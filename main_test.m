@@ -41,7 +41,8 @@ colorbar
 
 
 %sign asymmetry: calculate where edge(i,j) and edge(j,i) have a different
-%sign
+%sign  
+%Can be used to replicate results in Figure S14
 [sign_asym] = fcn_get_sign_asymmetry(B);
 figure;
 imagesc(sign_asym,[0 1])
@@ -51,6 +52,7 @@ colorbar
 
 %in_out similarity: calculate the correlation between in_weights and
 %out_weights per region
+%replicates results in Figure 4
 load("data/hcp400.mat")
 
 [inout_sim,p] = fcn_get_in_out_similarity(B);
@@ -75,12 +77,12 @@ ylabel("in/out similarity")
 
 
 %%calculate modules and laterality___________________________________
-
+%replicates results in Figure 2g
 %choose null model for community detection (uncomment to select)
 null = "geo" %or null = "neg_asym"
 
 if null == "geo"
-    null_model =  get_geometric_null(B); %custom geometric null model from our paper
+    null_model =  get_geometric_null(B); %custom geometric null model from our paper, see Figures S10,S11, & S12
 else
     null_model = 'negative_asym'; %neg asymmetric null model
 end
@@ -125,6 +127,7 @@ ylabel("laterality")
 
 
 %% get edge usage on shortest path backbone_______________________________
+%replicates results from Figure 3c,d,g
 
 [edge_usage_fiber,percent_usage_fiber] = get_edge_usage(sc);
 
@@ -152,7 +155,7 @@ ylabel("percent of edges used")
 title("shortest paths backbone")
 
 %%Get connection null models & performance________________________________
-
+%can be used with group connectome and time series from multiple subjects to replicate results from Figure 1i
 n = size(sc,1);
 
 %minimally wired null model in which only the shortest (least-costly) connections are preserved 
