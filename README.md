@@ -2,7 +2,7 @@
 
 This toolbox presents a set of functions that can be used to create and analyze asymmetric, weighted and signed anatomical networks as presented in the paper:
 
-Tanner, J., Faskowitz, J., Teixeira, A. S., Seguin, C., Coletta, L., Gozzi, A., ... & Betzel, R. (2022). Reweighting the connectome: A multi-modal, asymmetric, weighted, and signed description of anatomical connectivity. bioRxiv, 2022-12.
+Tanner, J., Faskowitz, J., Teixeira, A. S., Seguin, C., Coletta, L., Gozzi, A., ... & Betzel, R. (2022). Reweighting the connectome: A multi-modal, asymmetric, weighted, and signed description of anatomical connectivity. 
 
 Firstly, in order to create such a network you must have two things:
 
@@ -35,7 +35,7 @@ Asymmetry analysis functions: these functions analyze the asymmetries in these n
 
 If you use this toolbox in your published work, please cite our paper:
 
-Tanner, J., Faskowitz, J., Teixeira, A. S., Seguin, C., Coletta, L., Gozzi, A., ... & Betzel, R. (2022). Reweighting the connectome: A multi-modal, asymmetric, weighted, and signed description of anatomical connectivity. bioRxiv, 2022-12.
+Tanner, J., Faskowitz, J., Teixeira, A. S., Seguin, C., Coletta, L., Gozzi, A., ... & Betzel, R. (2022). Reweighting the connectome: A multi-modal, asymmetric, weighted, and signed description of anatomical connectivity.
 
 
 
