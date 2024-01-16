@@ -1,4 +1,4 @@
-# asymmetric_weighted_and_signed_connectome
+# Asymmetric Weighted and Signed Connectome toolbox
 
 This toolbox presents a set of functions that can be used to create and analyze asymmetric, weighted and signed anatomical networks as presented in the paper:
 
