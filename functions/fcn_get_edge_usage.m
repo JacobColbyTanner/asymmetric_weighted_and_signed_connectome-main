@@ -1,4 +1,4 @@
-function [edge_usage,percent_usage] = get_edge_usage(sc)
+function [edge_usage,percent_usage] = fcn_get_edge_usage(sc)
 
 has_neg = sum(sc<0,"all") > 0;
 directed = sum(sc-sc'~=0,"all") > 0;
