@@ -16,7 +16,7 @@ The analysis functions included in this toolbox consist of:
 
 Asymmetry analysis functions: these functions analyze the asymmetries in these new networks by comparing the weights of edges from node i to node j, with the edges from node j to node i.
 
-  fcn_get_asymmetry: returns a matrix where each entry is the difference between the weight of edge(i,j) and edge(j,i)
+  <code> fcn_get_asymmetry <code/>: returns a matrix where each entry is the difference between the weight of edge(i,j) and edge(j,i)
 
   fcn_get_sign_asymmetry: returns a binary matrix where entries of value 1 indicate that edges (i,j) and (j,i) had a different sign(+/-).
 
