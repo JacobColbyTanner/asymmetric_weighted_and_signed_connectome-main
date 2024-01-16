@@ -57,6 +57,7 @@ load("data/hcp400.mat")
 
 [inout_sim,p] = fcn_get_in_out_similarity(B);
 
+%assign nodal in/out similarity values to the brain system they belong to
 systems = nan(size(B,1),max(lab));
 for i = 1:max(lab)
     idx = lab == i;
@@ -64,6 +65,7 @@ for i = 1:max(lab)
     
 end
 
+%plot in/out similarity per brain system
 figure;
 boxplot(systems)
 xticks(1:16)
@@ -88,9 +90,12 @@ else
 end
 num_iter = 10; %change to iteration preference (10 for example purposes only)
 lat_AWS = [];
+%run modularity multiple times to get a good estimate of laterality (the optimization landscape with modularity maximization is known to be degenerate such that there are many equally good partitions. This helps to ensure that the results hold across these partitions.
+%run iteratons with AWS connectome first
 for i = 1:num_iter
     %get modules AWS
     gamma = 1;
+    %Get modular partition
     [M,Q] = community_louvain(B,gamma,[],null_model);
     hemi = ones(400,1);
     hemi(201:400) = 2;
@@ -106,9 +111,11 @@ else
 end
 
 lat_sc = [];
+%run iteratons with fiber-density connectome next
 for i = 1:num_iter
     %get modules sc
     gamma = 1;
+    %Get modular partition
     [M,Q] = community_louvain(sc,gamma,[],null_model);
     hemi = ones(400,1);
     hemi(201:400) = 2;
@@ -119,6 +126,7 @@ end
 
 both = [lat_AWS(:), lat_sc(:)];
 
+%plot to show that AWS modules tend to have lower laterality than fiber density modules
 figure;
 boxplot(both)
 xticklabels({"AWS", "fiber density"})
@@ -133,6 +141,7 @@ ylabel("laterality")
 
 [edge_usage_AWS,percent_usage_AWS] = fcn_get_edge_usage(B);
 
+%plot edge usage matrices showing the number of times each edge was used for the different connectomes
 figure;
 subplot(1,2,1)
 imagesc(edge_usage_AWS, [0 5])
@@ -148,6 +157,7 @@ colorbar
 
 both = [percent_usage_AWS,percent_usage_fiber];
 
+%plot to show that AWS uses more edges in its shortest path backbone
 figure;
 bar(both)
 xticklabels({"AWS", "fiber density"})
@@ -194,6 +204,8 @@ topological_sc = randmio_und(sc,numiter);
 
 all_corr = [corr_pred_obs,corr_pred_obs_minwire,corr_pred_obs_reorder,corr_pred_obs_spin,corr_pred_obs_topo];
 all_MSE = [MSE,MSE_minwire,MSE_reorder,MSE_spin, MSE_topo];
+
+%plot to compare model performance across these different connectivity null models
 figure;
 subplot(1,2,1)
 bar(all_corr)
