@@ -82,7 +82,7 @@ ylabel("in/out similarity")
 null = "geo" %or null = "neg_asym"
 
 if null == "geo"
-    null_model =  get_geometric_null(B); %custom geometric null model from our paper, see Figures S10,S11, & S12
+    null_model =  fcn_get_geometric_null(B); %custom geometric null model from our paper, see Figures S10,S11, & S12
 else
     null_model = 'negative_asym'; %neg asymmetric null model
 end
@@ -100,7 +100,7 @@ for i = 1:num_iter
 end
 
 if null == "geo"
-    null_model =  get_geometric_null(sc); %custom geometric null model from our paper
+    null_model =  fcn_get_geometric_null(sc); %custom geometric null model from our paper
 else
     null_model = 'negative_asym'; %neg asymmetric null model
 end
@@ -129,9 +129,9 @@ ylabel("laterality")
 %% get edge usage on shortest path backbone_______________________________
 %replicates results from Figure 3c,d,g
 
-[edge_usage_fiber,percent_usage_fiber] = get_edge_usage(sc);
+[edge_usage_fiber,percent_usage_fiber] = fcn_get_edge_usage(sc);
 
-[edge_usage_AWS,percent_usage_AWS] = get_edge_usage(B);
+[edge_usage_AWS,percent_usage_AWS] = fcn_get_edge_usage(B);
 
 figure;
 subplot(1,2,1)
