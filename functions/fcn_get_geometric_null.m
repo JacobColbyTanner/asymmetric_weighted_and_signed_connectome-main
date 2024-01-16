@@ -1,4 +1,4 @@
-function b = get_geometric_null(sc)
+function b = fcn_get_geometric_null(sc)
 
     
     mtrx = sc;
