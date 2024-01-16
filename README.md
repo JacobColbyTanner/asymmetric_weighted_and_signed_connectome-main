@@ -24,11 +24,11 @@ The analysis functions included in this toolbox consist of:
 
   4. <code>community_louvain </code>: this is a function from the brain connectivity toolbox (https://sites.google.com/site/bctnet/) that computes modularity maximization with the Louvain algorithm in order to divide an adjacency matrix into modules. For more info on modularity maximization, see: Esfahlani, F. Z., Jo, Y., Puxeddu, M. G., Merritt, H., Tanner, J. C., Greenwell, S., ... & Betzel, R. F. (2021). Modularity maximization as a flexible and generic framework for brain network exploratory analysis. Neuroimage, 244, 118607.
 
-  5. <code>get_geometric_null </code>: creates a null connectivity matrix for usage in modularity maximization. This null assigns every existing edge in the network to the mean weight value across all existing edges.
+  5. <code>fcn_get_geometric_null </code>: creates a null connectivity matrix for usage in modularity maximization. This null assigns every existing edge in the network to the mean weight value across all existing edges.
 
   6. <code>fcn_bilaterality </code>: takes in a set of community labels (produced by community_louvain) as well as labels for the hemisphere each node belongs to and computes a measure of laterality. This measure describes how much each of the modules tends to be concentrated in one of the two hemispheres.
 
-  7. <code>get_edge_usage </code>: counts the number of times each edge is used in the shortest paths between all nodes in the network.
+  7. <code>fcn_get_edge_usage </code>: counts the number of times each edge is used in the shortest paths between all nodes in the network.
 
   8. <code>randmio_und </code>: this is a function from the brain connectivity toolbox (https://sites.google.com/site/bctnet/) that randomizes an undirected network while preserving the degree distribution.
 
