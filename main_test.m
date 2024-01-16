@@ -1,12 +1,12 @@
 
-%%Load data and add path to functions___________________________________
+%%Load data and add path to functions
 addpath("functions/")
 load("data/sample_data.mat")
 load("data/hcp400.mat")
 load("data/hcp400centroids.mat")
 load("data/schaefer-yeo17_400node_permuted_inds.mat")
 
-%%Run AWS model and plot weight matrices___________________________________
+%%Run AWS model and plot weight matrices
 [B,tspred,corr_pred_obs,MSE, local_error] = fcn_run_sc_regress(sc,ts);
 save("data/AWS_connectome.mat","B")
 
@@ -24,7 +24,7 @@ axis("square")
 colorbar
 
 
-%%calculate asymmetry values___________________________________
+%%calculate asymmetry values
 %regular and absolute asymmetry
 [asymmetry, abs_asymmetry] = fcn_get_asymmetry(B);
 figure;
@@ -78,7 +78,7 @@ ylabel("in/out similarity")
 
 
 
-%%calculate modules and laterality___________________________________
+%%calculate modules and laterality
 %replicates results in Figure 2g
 %choose null model for community detection (uncomment to select)
 null = "geo" %or null = "neg_asym"
@@ -134,7 +134,7 @@ ylabel("laterality")
 
 
 
-%% get edge usage on shortest path backbone_______________________________
+%% get edge usage on shortest path backbone
 %replicates results from Figure 3c,d,g
 
 [edge_usage_fiber,percent_usage_fiber] = fcn_get_edge_usage(sc);
@@ -164,7 +164,7 @@ xticklabels({"AWS", "fiber density"})
 ylabel("percent of edges used")
 title("shortest paths backbone")
 
-%%Get connection null models & performance________________________________
+%%Get connection null models & performance
 %can be used with group connectome and time series from multiple subjects to replicate results from Figure 1i
 n = size(sc,1);
 
