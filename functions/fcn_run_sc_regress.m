@@ -1,8 +1,41 @@
 function [B,tspred,corr_pred_obs,MSE, local_error] = fcn_run_sc_regress(sc,ts)
 
-        
+   %Function to get an asymmetric, weighted and signed (AWS) connectome from a binary structural network and activity time series
+%
+%   This function is a fast and simple way to re-weight structural connectome data using functional imaging data
+%
+%   Inputs:
+%       sc,
+%           directed/undirected adjacency matrix describing the anatomical connections between nodes
+%       ts,
+%           activity time series representing the activity of the same nodes found in the structural connectivity matrix (sc) [time x node]
+%              
+%
+%   Outputs:
+%     
+%       B,
+%           the coefficients from the linear regression model that represent the new weights in the AWS connectome
+%            
+%       tspred,
+%           the predicted time series using the model
+%
+%       corr_pred_obs,
+%           correlation between the the predicted and observed time series
+%        
+%       MSE, 
+%           mean squared error between the predicted and observed time series
+%
+%       local_error,
+%           cell array of the MSE and corr_pred_obs per brain region/node
+%
+%   Example:
+%       [B,tspred,corr_pred_obs,MSE, local_error] = fcn_run_sc_regress(sc,ts)
+%       
+%
+%   References:
+%       Tanner et al (2022). Reweighting the connectome
 
-%%corr_pred_obs is the correlation between observed and predicted ts
+
 
 %% zscore time series
 tss = zscore(ts);
