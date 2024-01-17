@@ -1,13 +1,33 @@
 function lat = fcn_bilaterality(c,hemi,nrand)
-% 
-% clear all
-% close all
-% clc
-% 
-% load ../mat/bmat.lag=1.samplegamma.N_92.mat
-% c = cisample(:,1);
-% hemi = [ones(46,1); ones(46,1)*2];
-% nrand = 1000;
+
+   %Function to measure the laterality of a modular partition. Laterality measures how much a module favors one hemisphere over the other.
+%
+%   
+%
+%   Inputs:
+%       c,
+%           modular partition of each node into different communities represented as a list of community labels
+%       hemi,
+%           list of labels indicating which hemisphere each node belongs to
+%       nrand,
+%           number of randomly permuted null models to measure laterality against
+%              
+%
+%   Outputs:
+%     
+%       lat,
+%           laterality
+%           
+%
+%   Example:
+%       nrand = 1000;
+%       hemi = ones(size(sc,1),1);
+%       hemi(201:400) = 2: %label which nodes belong to each hemisphere
+%       [c,Q] = community_louvain(sc,gamma,[],'neg_asym');
+%       lat = fcn_bilaterality(c,hemi,nrand);
+%       
+%
+%   
 
 
 H = dummyvar(hemi);
