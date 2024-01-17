@@ -22,8 +22,9 @@ function lat = fcn_bilaterality(c,hemi,nrand)
 %   Example:
 %       nrand = 1000;
 %       hemi = ones(size(sc,1),1);
-%       hemi(201:400) = 2: %label which nodes belong to each hemisphere
-%       [c,Q] = community_louvain(sc,gamma,[],'neg_asym');
+%       hemi(201:400) = 2; %label which nodes belong to each 
+%       gamma = 1;
+%       [c,Q] = community_louvain(sc,gamma,[],'negative_asym');
 %       lat = fcn_bilaterality(c,hemi,nrand);
 %       
 %
