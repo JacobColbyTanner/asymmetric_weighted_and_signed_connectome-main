@@ -1,6 +1,6 @@
 function [asymmetry, abs_asymmetry] = fcn_get_asymmetry(B)
 
-%Function to measure the laterality of a modular partition. Laterality measures how much a module favors one hemisphere over the other.
+%
 %
 %   
 %
