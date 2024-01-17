@@ -6,7 +6,7 @@ function [asymmetry, abs_asymmetry] = fcn_get_asymmetry(B)
 %
 %   Inputs:
 %       B,
-%           modular partition of each node into different communities represented as a list of community labels
+%           the coefficients from the linear regression model that represent the new weights in the AWS connectome
 %       
 %              
 %
@@ -19,8 +19,11 @@ function [asymmetry, abs_asymmetry] = fcn_get_asymmetry(B)
 %           
 %
 %   Example:
-%      
-%        [asymmetry, abs_asymmetry] = fcn_get_asymmetry(B)
+%        [B,tspred,corr_pred_obs,MSE, local_error] = fcn_run_sc_regress(sc,ts);
+%        [asymmetry, abs_asymmetry] = fcn_get_asymmetry(B);
+
+
+
 
 
     asymmetry = B-B';
