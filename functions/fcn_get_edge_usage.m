@@ -1,5 +1,29 @@
 function [edge_usage,percent_usage] = fcn_get_edge_usage(sc)
 
+
+%
+%
+%   
+%
+%   Inputs:
+%       sc,
+%           weighted structural connectome (e.g. AWS connectome, or fiber density connectome)
+%       
+%              
+%
+%   Outputs:
+%     
+%       edge_usage,
+%           a matrix where each value says how many times edge(i,j) was used across all shortest paths in the network
+%       percent_usage,
+%           percentage of edges that were present in the connectome that were used in the shortest paths backbone.
+%           
+%
+%   Example:
+%        [B,tspred,corr_pred_obs,MSE, local_error] = fcn_run_sc_regress(sc,ts);
+%        [edge_usage,percent_usage] = fcn_get_edge_usage(B)
+
+
 has_neg = sum(sc<0,"all") > 0;
 directed = sum(sc-sc'~=0,"all") > 0;
 
