@@ -19,8 +19,9 @@ function b = fcn_get_geometric_null(sc)
 %           
 %
 %   Example:
-%        b = fcn_get_geometric_null;
-%        [edge_usage,percent_usage] = fcn_get_edge_usage(B)
+%        b = fcn_get_geometric_null(sc);
+%        gamma = 1;
+%        [M,Q] = community_louvain(b,gamma,[],'negative_asym');
 
     
     mtrx = sc;
