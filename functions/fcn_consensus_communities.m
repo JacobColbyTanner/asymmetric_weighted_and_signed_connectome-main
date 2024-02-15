@@ -32,7 +32,7 @@ mask = triu(ones(n),1) > 0;
 if size(ci,1) == size(ci,2)
     d = ci;
 else
-    d = fcn_agreement(ci);
+    d = agreement(ci);
 end
 goFlag = length(unique(d));
 if goFlag <= 2
