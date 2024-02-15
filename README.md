@@ -19,7 +19,7 @@ The functions included in this toolbox are listed below. More detailed comments 
 
 3.<code>fcn_get_in_out_similarity</code> : returns an array of values (one for each node in the network) that describe the similarity of the in-weights and out-weights for each node. The in-weights are the weights that were used by a linear regression model to predict the future activity of this node. So, the in-weights are weights describing when other nodes are used to predict this nodes activity. In contrast, the out-weights are when this nodes activity is used to predict a different nodes activity.
 
-4.<code>fcn_consensus_communities</code> : takes in multiple partitions of the same connectivity matrix into communities/modules and returns a consensus partition. This function includes the use of two functions to relabel and identify unique partitions (fcn_relabel_partitions and fcn_unique_partitions respectively).
+4.<code>fcn_consensus_communities</code> : takes in multiple partitions of the same connectivity matrix into communities/modules and returns a consensus partition. This function includes the use of two functions to relabel and identify unique partitions (<code>fcn_relabel_partitions</code> and <code>fcn_unique_partitions</code> respectively).
 
 5.<code>fcn_sort_communities</code> : relabels the communities of a partition such that the largest community gets labeled 1, the next largest gets labeled 2, and so on.
 
