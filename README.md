@@ -9,7 +9,7 @@ Firstly, in order to create such a network you must have two things:
 
 (2) Brain activity time series with the same number of nodes as the binarized structural brain network. This time series data should be organized into a matrix where the rows represent time points and the columns represent node activity (time x node).
 
-The main_test.m file uses some example data from a de-identified subject from Human Connectome Project dataset in order to create and plot an asymmetric, weighted and signed network from (1) a binarized structural brain network, and (2) a time series of brain activity. Additionally, this code will also call a variety of functions to analyze this new network and compare it with a fiber density weighted network, the results of which are plotted.
+The main.m file uses some example data from a de-identified subject from Human Connectome Project dataset in order to create and plot an asymmetric, weighted and signed network from (1) a binarized structural brain network, and (2) a time series of brain activity. Additionally, this code will also call a variety of functions to analyze this new network and compare it with a fiber density weighted network, the results of which are plotted.
 
 The functions included in this toolbox are listed below. More detailed comments and instructions for usage can be found within each function.
 
