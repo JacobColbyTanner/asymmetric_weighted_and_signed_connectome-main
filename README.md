@@ -3,7 +3,7 @@
 This toolbox presents a set of functions that can be used to create and analyze asymmetric, weighted and signed anatomical networks as presented in the paper:
 Tanner, J., Faskowitz, J., Teixeira, A. S., Seguin, C., Coletta, L., Gozzi, A., ... & Betzel, R. (2022). Reweighting the connectome: A multi-modal, asymmetric, weighted, and signed description of anatomical connectivity.
 
-Firstly, in order to create such a network you must have two things:
+Constructing such a network requires two separate inputs:
 
   1. A binarized structural brain network (directed or undirected) describing the anatomical connections between all nodes in the network. This network should be in     the form of an adjacency matrix.
 
